@@ -20,9 +20,9 @@ def list_from_array(arr):
         tail = tail.next
     return head
 
-#Linked List iteration
+#Linked List count
 
-def iteration(head):
+def count(head):
     temp = head
     count = 0
     while temp!= None:
@@ -90,4 +90,51 @@ def search_index(head,elem):
     return -1
 
 
-#insert node at one index
+##INSERTION
+
+#  insert at the beginning
+def (head,idx,elem):
+    total_nodes = count(head)
+    if idx == 0:
+        n = Node(elem,head)
+        head = n
+    # return head
+
+#insertion at middle
+    elif idx > 1 and idx < (total_nodes-1):
+        n = Node(elem,None) # N namer notun node create korlam
+        prev_node = retrive_node(head,idx-1) #je index e dhukabo er ager idx er node ta collect krlam
+        current_node = prev_node.next # n er next node ta
+        n.next = current_node        #notun node er shamner ta ekhon
+        prev_node.next = n  #[link kore fellam pichoner tar shathe notun er]
+    #return head
+
+#insertion at the end
+    else:
+        new = Node(elem,None)
+        current_node = retrive_node(head,total_nodes-1)
+        current_node.next = new
+
+    #return None
+
+
+#Node Deletation
+
+#removing first node
+
+def delete(head,idx):
+    total_nodes = count(head)
+    if idx == 0:
+        # current_node = retrive_node(head,idx)
+        # new_head = current_node.next
+        # current_node.next = None
+        new_head = head.next
+        head.next = None
+        #return new_head
+#deleting at the middle:
+    elif idx>1 and idx<(total_nodes-1):
+        prev_node = retrive_node(head,idx-1):
+        current_node = prev_node.next
+        prev_node.next = current_node.next
+        current_node.next = None
+    # return head
