@@ -40,3 +40,48 @@ def reverse (head):
         prev = curr #ekhon previous node banabo bortoman take
         curr = next # aar current node ta hobe ager bortoman er shamner ta
     return prev
+
+def len(head):
+    temp = head
+    count = 0
+    while temp!= None:
+        count+=1
+        temp = temp.next
+    return count
+
+def rotating_left(head):
+    first_node = head
+    last_node = head.next
+    while last_node.next != None:
+        last_node = last_node.next
+    last_node.next = head
+    head = first_node.next
+    first_node.next = None
+    return head
+
+
+#again 
+def rotateLeft (head):
+    first_node = head
+    last_node = head.next
+    while last_node.next!= None:
+        last_node = last_node.next
+    last_node.next = head
+    head = first_node.next
+    first_node.next = None
+    return head
+
+
+#rotateRight
+
+def rotateRight(head):
+    prev_node = head
+    last_node = head.next
+    while last_node.next!=None:
+        prev_node = last_node
+        last_node = last_node.next
+    last_node.next = head
+    head = last_node
+    prev_node.next = None
+    return head
+
