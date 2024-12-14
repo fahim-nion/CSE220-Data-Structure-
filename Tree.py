@@ -57,10 +57,11 @@ Caution it has to be from idx 1 , 0 num idx will be None
 '''
 
 def treeFromArray(arr,i=1):
-    if len(arr) or arr[i] == None:
+    if i>= len(arr) or arr[i] == None:
         return None
     node = BTNOde(arr[i])
     node.left = treeFromArray(arr,2*i)
     node.right = treeFromArray(arr, 2*i +1)
     return node
 root = treeFromArray([None,"A","B","C","D","E"])
+
