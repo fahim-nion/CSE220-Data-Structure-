@@ -24,9 +24,9 @@ root.left.right = BTNOde("E")
 def preorder(root):
     if root == None:
         return
-print(root.elem, end=" ")
-preorder(root.left)
-preorder(root.right)
+    print(root.elem, end=" ")
+    preorder(root.left)
+    preorder(root.right)
 
 
 #INOrder Traversal (Left -- Root -- Right)
@@ -34,18 +34,18 @@ preorder(root.right)
 def inorder(root):
     if root == None:
         return
-inorder(root.left)
-print(root.elem, end=" ")
-inorder(root.right)
+    inorder(root.left)
+    print(root.elem, end=" ")
+    inorder(root.right)
 
 
 ##POSTOrder Traversal (Left -- Right -- Root)
 def postorder(root):
     if root == None:
         return
-postorder(root.left)
-postorder(root.right)
-print(root.elem, end=" ")
+    postorder(root.left)
+    postorder(root.right)
+    print(root.elem, end=" ")
 
 
 
